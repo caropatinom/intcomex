@@ -1,0 +1,31 @@
+
+    <div class="d-flex justify-content-between">
+        <h4>Consultar un empleado</h4>
+        <a href="#" routerLink="/employee/index" class="btn btn-primaryt">Back</a>
+      </div>
+  
+      <hr>  
+      <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="title">Id:</label>
+            <input
+              formControlName="emp_no"
+              id="emp_no"
+              type="text"
+              class="form-control"
+              placeholder="Digite el número a buscar">
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" >Consultar</button>
+      
+      </form>
+      <table class="table ">
+        <tr>          
+          <th>Nombre</th>          
+        </tr>
+        <tr>          
+         <!-- <td>{{ items.emp_no }}</td>-->
+        </tr>
+      </table>
+     

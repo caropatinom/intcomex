@@ -1,0 +1,37 @@
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>Listar empleados</h4>
+      <a routerLink="/employee/create" class="btn btn-success">Crear un empleado</a><br>
+      <a routerLink="/employee/consult" class="btn btn-success">Consultar un empleado por id</a>
+    </div>
+
+    <br>
+    
+    <table class="table ">
+      <tr>
+        <th>No empleado</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de nacimiento</th>
+        <th>Género</th>
+        <th>Fecha de contratación</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+      <tr *ngFor="let empleado of employee">
+        <td>{{ empleado.emp_no }}</td>
+        <td>{{ empleado.first_name }}</td>
+        <td>{{ empleado.last_name }}</td>
+        <td>{{ empleado.birth_date}}</td>       
+        <td>{{ empleado.gender }}</td>
+        <td>{{ empleado.hire_date }}</td>
+        <td>
+          <a href="#" [routerLink]="['/employee/', 'edit', empleado.emp_no  ]" class="btn btn-primary">Edit</a>
+        </td>
+        <td>
+          <button type="button" (click)="deleteEmployee(empleado.emp_no)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </section>
